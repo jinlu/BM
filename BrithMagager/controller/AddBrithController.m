@@ -35,7 +35,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AddBrithController)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload

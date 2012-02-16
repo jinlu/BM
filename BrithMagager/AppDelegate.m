@@ -29,12 +29,14 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[[ImportantBrithViewController alloc] initWithNibName:@"FirstViewController" bundle:nil] autorelease];
-    UIViewController *viewController2 = [[[AllBrithViewController alloc] initWithNibName:@"SecondViewController" bundle:nil] autorelease];
+    UIViewController *viewController1 = [[[ImportantBrithViewController alloc] initWithNibName:@"ImportantBrithViewController" bundle:nil] autorelease];
+    UIViewController *viewController2 = [[[AllBrithViewController alloc] initWithNibName:@"AllBrithViewController" bundle:nil] autorelease];
     
-    UINavigationController * navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController1] autorelease];
+    UINavigationController * navigationController1 = [[[UINavigationController alloc] initWithRootViewController:viewController1] autorelease];
+    UINavigationController * navigationController2 = [[[UINavigationController alloc] initWithRootViewController:viewController2] autorelease];
+
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, viewController2, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController1, navigationController2, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "KaixinLoginController.h"
 #import "AddBrithController.h"
+#import "AllBrithModel.h"
+#import "AllBrithTableViewCell.h"
 
-@interface AllBrithViewController : UIViewController
+@interface AllBrithViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-    
+    AllBrithModel         *allBrithModel;
+    AllBrithTableViewCell *friendInfoCell; 
 }
+
+@property (retain, nonatomic) IBOutlet UITableView *allBrithTable;
+@property (retain, nonatomic) IBOutlet AllBrithTableViewCell *friendInfoCell;
+
 @end

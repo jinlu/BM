@@ -87,6 +87,10 @@
 		AE41EDE014E520C30034CB5D /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AE41EDD314E520C30034CB5D /* SDWebImagePrefetcher.m */; };
 		AE41EDE114E520C30034CB5D /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE41EDD514E520C30034CB5D /* UIButton+WebCache.m */; };
 		AE41EDE214E520C30034CB5D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE41EDD714E520C30034CB5D /* UIImageView+WebCache.m */; };
+		AEFCAD5814EBB42400D6A904 /* AllBrithTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFCAD5714EBB42400D6A904 /* AllBrithTableViewCell.m */; };
+		AEFCAD5B14EBB46600D6A904 /* AllBrithCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFCAD5A14EBB46600D6A904 /* AllBrithCellView.m */; };
+		AEFCAD5D14EBB52C00D6A904 /* PersonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFCAD5C14EBB52C00D6A904 /* PersonViewCell.xib */; };
+		AEFCAD6014EBB5DD00D6A904 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFCAD5F14EBB5DD00D6A904 /* head.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -224,6 +228,12 @@
 		AE41EDD514E520C30034CB5D /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		AE41EDD614E520C30034CB5D /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		AE41EDD714E520C30034CB5D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		AEFCAD5614EBB42400D6A904 /* AllBrithTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBrithTableViewCell.h; sourceTree = "<group>"; };
+		AEFCAD5714EBB42400D6A904 /* AllBrithTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBrithTableViewCell.m; sourceTree = "<group>"; };
+		AEFCAD5914EBB46600D6A904 /* AllBrithCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBrithCellView.h; sourceTree = "<group>"; };
+		AEFCAD5A14EBB46600D6A904 /* AllBrithCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBrithCellView.m; sourceTree = "<group>"; };
+		AEFCAD5C14EBB52C00D6A904 /* PersonViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewCell.xib; sourceTree = "<group>"; };
+		AEFCAD5F14EBB5DD00D6A904 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +255,7 @@
 			children = (
 				AE25E4A814EA13CB0041184C /* AllBrithViewController.xib */,
 				AE25E4A914EA13CB0041184C /* ImportantBrithViewController.xib */,
+				AEFCAD5C14EBB52C00D6A904 /* PersonViewCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -252,6 +263,7 @@
 		AE2C5D6114EA096A00D09381 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AEFCAD5E14EBB5DD00D6A904 /* other */,
 				AE2C5D6314EA098500D09381 /* Kaixin */,
 			);
 			path = Resource;
@@ -443,6 +455,7 @@
 		AE41ED6114E3C81C0034CB5D /* BrithMagager */ = {
 			isa = PBXGroup;
 			children = (
+				AEFCAD5514EBB41200D6A904 /* cell */,
 				AE25E4A714EA13A00041184C /* xib */,
 				AE41EDBD14E520630034CB5D /* controller */,
 				AE2C5DD514EA0BB100D09381 /* datasource */,
@@ -557,6 +570,25 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		AEFCAD5514EBB41200D6A904 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				AEFCAD5614EBB42400D6A904 /* AllBrithTableViewCell.h */,
+				AEFCAD5714EBB42400D6A904 /* AllBrithTableViewCell.m */,
+				AEFCAD5914EBB46600D6A904 /* AllBrithCellView.h */,
+				AEFCAD5A14EBB46600D6A904 /* AllBrithCellView.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AEFCAD5E14EBB5DD00D6A904 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				AEFCAD5F14EBB5DD00D6A904 /* head.png */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -640,6 +672,8 @@
 				AE2C5E2814EA0F1400D09381 /* AddBrithController.xib in Resources */,
 				AE25E4AA14EA13CB0041184C /* AllBrithViewController.xib in Resources */,
 				AE25E4AB14EA13CB0041184C /* ImportantBrithViewController.xib in Resources */,
+				AEFCAD5D14EBB52C00D6A904 /* PersonViewCell.xib in Resources */,
+				AEFCAD6014EBB5DD00D6A904 /* head.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +728,8 @@
 				AE2C5E2714EA0F1400D09381 /* AddBrithController.m in Sources */,
 				AE25E4A514EA13830041184C /* AllBrithViewController.m in Sources */,
 				AE25E4A614EA13830041184C /* ImportantBrithViewController.m in Sources */,
+				AEFCAD5814EBB42400D6A904 /* AllBrithTableViewCell.m in Sources */,
+				AEFCAD5B14EBB46600D6A904 /* AllBrithCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

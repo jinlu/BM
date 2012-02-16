@@ -19,9 +19,16 @@
     [super dealloc];
 }
 
+// days left
+- (void)allBrithCalDayLeft
+{
+    
+}
+
 - (void)checkout
 {
-    self.allList = [[DataCenter sharedInstance] dataCenterAllPerson];        
+    self.allList = [[DataCenter sharedInstance] dataCenterAllPerson];  
+    [self allBrithCalDayLeft];
 }
 
 - (id)init
@@ -36,6 +43,21 @@
 
 - (BOOL)allBrithAdd:(DataItem *)dataItem
 {
+    if (dataItem)
+    {
+        [[DataCenter sharedInstance] dataCenterAdd:dataItem];
+        return NO;
+    }
+    return NO;
+}
+
+- (BOOL)allBrithRemove:(long long)dataItemID
+{
+    if (dataItemID > 0)
+    {
+        [[DataCenter sharedInstance] dataCenterDelete:dataItemID];
+        return YES;
+    }
     return NO;
 }
 

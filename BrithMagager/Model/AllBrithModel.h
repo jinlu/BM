@@ -24,5 +24,6 @@
 @property (nonatomic, assign) id <AllBrithDelegate> delegate;
 
 - (BOOL)allBrithAdd:(DataItem *)dataItem;
+- (BOOL)allBrithRemove:(long long)dataItemID;
 
 @end

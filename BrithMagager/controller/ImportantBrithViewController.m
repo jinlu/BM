@@ -39,7 +39,7 @@
     
     self.navigationItem.leftBarButtonItem = leftButton;
     self.navigationItem.rightBarButtonItem = rightButton;
-    self.navigationItem.title = @"动态";
+    self.navigationItem.title = @"重要生日";
     [leftButton release];
     [rightButton release];
 }
