@@ -9,6 +9,7 @@
 #import "KaxinDataSourceModel.h"
 #import "CommonData.h"
 #import "DataItem.h"
+#import "DataItemFactory.h"
 
 #define REQUEST_FRIENDLIST @"https://api.kaixin001.com/friends/me.json"
 
@@ -101,10 +102,10 @@
             int       personGender  = [[person objectForKey:@"gender"] intValue];
             NSString *personUrl     = [person objectForKey:@"logo50"];
             NSString *personName    = [person objectForKey:@"name"];
-            long long personUid     = [[person objectForKey:@"uid"] longLongValue];
+            // kaixin uid
+            // long long personUid     = [[person objectForKey:@"uid"] longLongValue];
             
-            DataItem *dataItem = [[[DataItem alloc] init] autorelease];
-            dataItem.addressID = personUid;
+            DataItem *dataItem = [DataItemFactory produceDataItem];
             dataItem.addressGender = personGender;
             dataItem.addressName = personName;
             [dataItem addressSetLogoURL:personUrl];

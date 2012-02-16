@@ -14,6 +14,8 @@
     
 }
 
+- (void)setCellInfo:(NSArray*)arry;
+
 @property (retain, nonatomic) IBOutlet AllBrithCellView *personView1;
 @property (retain, nonatomic) IBOutlet AllBrithCellView *personView2;
 @property (retain, nonatomic) IBOutlet AllBrithCellView *personView3;

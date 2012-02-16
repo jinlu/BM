@@ -456,13 +456,13 @@
 						<string key="objectName">v3</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">21</int>
-						<reference key="object" ref="958678780"/>
+						<int key="objectID">22</int>
+						<reference key="object" ref="809869384"/>
 						<reference key="parent" ref="1036737499"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">22</int>
-						<reference key="object" ref="809869384"/>
+						<int key="objectID">21</int>
+						<reference key="object" ref="958678780"/>
 						<reference key="parent" ref="1036737499"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -499,7 +499,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">26</int>
+			<int key="maxID">31</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

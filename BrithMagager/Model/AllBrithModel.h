@@ -9,18 +9,19 @@
 #import <Foundation/Foundation.h>
 
 #import "DataItem.h"
+#import "DataCenter.h"
 
 @protocol AllBrithDelegate <NSObject>
 - (void)allBirthChanged;
 @end
 
-@interface AllBrithModel : NSObject
+@interface AllBrithModel : NSObject <DataCenterDelegate>
 {
-    NSArray                     *allList;
+    NSMutableDictionary         *allList;
     id <AllBrithDelegate>       delegate;
 }
 
-@property (nonatomic, retain) NSArray* allList;
+@property (nonatomic, retain) NSMutableDictionary* allList;
 @property (nonatomic, assign) id <AllBrithDelegate> delegate;
 
 - (BOOL)allBrithAdd:(DataItem *)dataItem;

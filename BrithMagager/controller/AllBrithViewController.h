@@ -12,7 +12,7 @@
 #import "AllBrithModel.h"
 #import "AllBrithTableViewCell.h"
 
-@interface AllBrithViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface AllBrithViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AllBrithDelegate>
 {
     AllBrithModel         *allBrithModel;
     AllBrithTableViewCell *friendInfoCell; 

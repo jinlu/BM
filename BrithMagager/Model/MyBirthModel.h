@@ -13,7 +13,7 @@
 - (void)myBirthChanged;
 @end
 
-@interface MyBirthModel : NSObject
+@interface MyBirthModel : NSObject 
 {
     NSArray                    *myList;
     id <MyBirthDelegate>       delegate;

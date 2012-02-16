@@ -7,6 +7,7 @@
 //
 
 #import "DataCenter.h"
+#import "DataItemFactory.h"
 
 @interface DataCenter (private)
 - (long long)modelDataIDMaker;
@@ -16,11 +17,6 @@
 @synthesize delegate;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(DataCenter);
-
-+ (NSString *)LonglongToString:(long long)value
-{
-   return [NSString stringWithFormat:@"%lld", value];
-}
 
 - (void)dealloc
 {
@@ -74,23 +70,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataCenter);
     }    
 }
 
-// generate data item id 
-- (long long)dataItemIDFactory
-{
-    long long itemID = [[[NSUserDefaults standardUserDefaults] valueForKey:@"ITEM_ID"] longLongValue];
-    NSString *nextItemID = [DataCenter LonglongToString:itemID + 1];
-    [[NSUserDefaults standardUserDefaults] setValue:nextItemID forKey:@"ITEM_ID"];
-    return itemID;
-}
-
 // add data item into data center
 - (BOOL)dataCenterAddSilent:(DataItem*)dataItem
 {
     if (dataItem != nil)
     {
-        long long itemId = [self dataItemIDFactory];
-        NSString *stringItemId = [DataCenter LonglongToString:itemId];
-        dataItem.addressID = itemId;              
+        long long itemId = dataItem.addressID;
+        NSString *stringItemId = [DataItemFactory LonglongToString:itemId];  
         assert([dataList objectForKey:stringItemId] == nil);        
         [dataList setValue:dataItem forKey:stringItemId];
         return YES;
@@ -131,7 +117,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataCenter);
 
 - (BOOL)dataCenterDelete:(long long)dataItemId
 {
-    NSString *key = [DataCenter LonglongToString:dataItemId];    
+    NSString *key = [DataItemFactory LonglongToString:dataItemId];    
     if (dataItemId >= 0)
     {   
         [dataList removeObjectForKey:key];
@@ -150,7 +136,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataCenter);
 - (void)dataCenterDebugOutput
 {
     NSLog(@"\n========Data Center Output=========\n");    
-    NSLog(@"%@",dataList);
+    for (id data in [dataList allValues])
+    {
+        if ([data respondsToSelector:@selector(debugOutput)])
+        {
+            [data debugOutput];
+        }
+    }
+    
     NSLog(@"\n===================================\n");    
 }
 

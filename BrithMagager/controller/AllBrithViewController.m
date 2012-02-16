@@ -70,6 +70,7 @@
     if (allBrithModel == nil)
     {
         allBrithModel = [[AllBrithModel alloc] init];
+        [allBrithModel setDelegate:self];
     }
 }
 
@@ -111,12 +112,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;//[allBrithModel.allList count];
+    return [allBrithModel.allList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *idendtifier = @"hahahha";    
     AllBrithTableViewCell *cell = (AllBrithTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FriendInfoCell"];
     
     if (cell == nil) 
@@ -126,17 +126,10 @@
         friendInfoCell = nil;
     }
     
-    int index = [indexPath row];
-    
-//    id friendList = [allBrithModel friendList]; 
-//    
-//	if (index >= 0 && index < [friendList count])
-//	{        
-//        cell.myNameLabel.text = [[friendList objectAtIndex:[indexPath row]] objectForKey:@"name"];
-//        cell.myGenderLabel.text = ([[[friendList objectAtIndex:[indexPath row]] objectForKey:@"gender"] intValue] == 0 ? @"男" : @"女");
-//        cell.myStatusLabel.text = ([[[friendList objectAtIndex:[indexPath row]] objectForKey:@"online"] intValue] == 0 ? @"离线" : @"在线");
-//    }
-    
+    int index = [indexPath row];    
+    id friendList = allBrithModel.allList;     
+    id cellInfo = [friendList objectForKey:[NSNumber numberWithInt:index]];
+    [cell setCellInfo:cellInfo];
     return cell;
 }
 
@@ -144,6 +137,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 124;
+}
+
+
+#pragma mark Model Delegate
+- (void)allBirthChanged
+{
+    NSLog(@">>>>>>>>>>>>> all BrithDay data changed notify");
+    [allBrithTable reloadData];
 }
 
 @end

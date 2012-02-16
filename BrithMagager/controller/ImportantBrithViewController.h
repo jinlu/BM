@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AddBrithController.h"
+#import "ImportantBrithModel.h"
 
-@interface ImportantBrithViewController : UIViewController
+@interface ImportantBrithViewController : UIViewController <ImportantBrithDelegate>
 {
+    ImportantBrithModel *importantBrithModel;
 }
 @end

@@ -28,6 +28,12 @@
 
 #pragma mark - View lifecycle
 
+- (void)dealloc
+{
+    [importantBrithModel release];
+    [super dealloc];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,6 +66,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    if (importantBrithModel == nil)
+    {
+        importantBrithModel = [[ImportantBrithModel alloc] init];
+        [importantBrithModel setDelegate:self];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -81,6 +93,12 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark Model Delegate
+- (void)importantBirthChanged
+{
+    NSLog(@"********** Important Brith Changed");
 }
 
 @end

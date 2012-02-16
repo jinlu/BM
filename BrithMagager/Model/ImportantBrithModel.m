@@ -14,6 +14,7 @@
 
 - (void)dealloc
 {
+    [[DataCenter sharedInstance] removeObserver:self];
     [importantList release];
     [super dealloc];
 }
@@ -28,6 +29,7 @@
     self = [super init];
     if (self)
     {
+        [[DataCenter sharedInstance] addObserver:self];
         [self checkout];
     }
     return self;

@@ -9,6 +9,17 @@
 #import "AllBrithCellView.h"
 
 @implementation AllBrithCellView
+@synthesize backButton;
+@synthesize nameLabel;
+@synthesize dayLeftLabel;
+
+- (void)dealloc
+{
+    [backButton release];
+    [nameLabel release];
+    [dayLeftLabel release];
+    [super dealloc];
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -25,5 +36,16 @@
 
     // Configure the view for the selected state
 }
+
+- (void)setDayLeft:(NSString *)dayLeft
+{
+    [self.dayLeftLabel setText:dayLeft];     
+}
+
+- (void)setName:(NSString *)name
+{
+    [self.nameLabel setText:name];
+}
+
 
 @end

@@ -15,6 +15,7 @@
 
 - (void)dealloc
 {
+    [[DataCenter sharedInstance] removeObserver:self];
     [allList release];
     [super dealloc];
 }
@@ -25,9 +26,33 @@
     
 }
 
+- (void)dataListForController:(NSArray *)list
+{
+    int row = 0;    
+    NSMutableArray *array = [NSMutableArray array];
+    for (id data in list)
+    {
+        [array addObject:data];        
+        if ([array count] == 3)
+        {
+            [allList setObject:array forKey:[NSNumber numberWithInt:row]];
+            array = [NSMutableArray array];
+            row++;
+        }
+    }    
+    
+    if ([array count] != 0)
+    {
+        [allList setObject:array forKey:[NSNumber numberWithInt:row]];
+    }
+    
+    NSLog(@"\n all list : %@", allList);
+}
+
 - (void)checkout
 {
-    self.allList = [[DataCenter sharedInstance] dataCenterAllPerson];  
+    NSArray *list = [[DataCenter sharedInstance] dataCenterAllPerson];  
+    [self dataListForController:list];
     [self allBrithCalDayLeft];
 }
 
@@ -36,6 +61,8 @@
     self = [super init];
     if (self)
     {
+        allList = [[NSMutableDictionary alloc] init];
+        [[DataCenter sharedInstance] addObserver:self];
         [self checkout];
     }
     return self;

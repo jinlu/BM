@@ -14,5 +14,6 @@
 - (IBAction)kaixinImport:(id)sender;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(AddBrithController)
+@property (retain, nonatomic) IBOutlet UITextField *nameInputTextField;
 
 @end

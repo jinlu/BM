@@ -17,6 +17,22 @@
 @synthesize addressGender;
 @synthesize addressAttach;
 
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+- (id)init:(long long)itemID
+{
+    self = [super init];
+    if (self)
+    {
+        addressID = itemID;
+    }
+    
+    return self;
+}
+
 - (BOOL)addressEqual:(DataItem *)other
 {
     BOOL ret = YES;
@@ -60,5 +76,34 @@
     return NO;
 }
 
+#pragma mark NSCoding
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:[NSNumber numberWithLongLong:addressID] forKey:@"addressID"];
+    [aCoder encodeObject:addressName forKey:@"addressName"];
+    [aCoder encodeObject:addressBrith forKey:@"addressBrith"];
+    [aCoder encodeObject:[NSNumber numberWithBool:addressGender ] forKey:@"addressGender"];
+    [aCoder encodeObject:addressAttach forKey:@"addressAttach"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super init])
+    {
+        addressID = [[decoder decodeObjectForKey:@"addessID"] longLongValue];
+        addressName = [decoder decodeObjectForKey:@"addressName"];
+        addressBrith = [decoder decodeObjectForKey:@"addressBrith"];
+        addressGender = [[decoder decodeObjectForKey:@"addressGender"] boolValue];
+        addressAttach = [decoder decodeObjectForKey:@"addressAttach"];
+    }
+    
+    return self;
+}
+
+- (void)debugOutput
+{
+    NSString *male = addressGender?@"女":@"男";
+    NSLog(@"\n [ID] %lld\n [name] %@\n [brith] %@\n [gender] %@\n [attach] %@", addressID, addressName, addressBrith, male,addressAttach);
+}
 
 @end
