@@ -37,23 +37,7 @@
 {
     BOOL ret = YES;
     
-    if (self.addressID != other.addressID)
-    {
-        ret = NO;
-    }
-    else if (![self.addressName isEqualToString:other.addressName])
-    {
-        ret = NO;
-    }
-    else if (![self.addressBrith isEqualToString:other.addressBrith])
-    {
-        ret = NO;
-    }
-    else if ((!self.addressGender == other.addressGender))
-    {
-        ret = NO;
-    }
-    else if (![self.addressAttach isEqualToDictionary:other.addressAttach])
+    if (![self.addressName isEqualToString:other.addressName])
     {
         ret = NO;
     }

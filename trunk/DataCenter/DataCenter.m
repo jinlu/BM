@@ -84,7 +84,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataCenter);
         return YES;
     }
 
-
     return NO;
 }
 
@@ -106,7 +105,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataCenter);
 {
     if (dataItemList != nil)
     {
-        for (DataItem *data in dataItemList)
+        for (id data in dataItemList)
         {
             [self dataCenterAddSilent:data];
         }

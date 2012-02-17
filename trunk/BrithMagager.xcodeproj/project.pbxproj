@@ -93,6 +93,8 @@
 		AEFCAD6014EBB5DD00D6A904 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFCAD5F14EBB5DD00D6A904 /* head.png */; };
 		AEFCAD6B14ECA20300D6A904 /* AddBrithAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFCAD6A14ECA20200D6A904 /* AddBrithAdapter.m */; };
 		AEFCAD6F14ECA40700D6A904 /* DataItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFCAD6E14ECA40700D6A904 /* DataItemFactory.m */; };
+		AEFCAD7B14EDF4A000D6A904 /* ImportBrithController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFCAD7914EDF49F00D6A904 /* ImportBrithController.m */; };
+		AEFCAD7C14EDF4A000D6A904 /* ImportBrithController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFCAD7A14EDF49F00D6A904 /* ImportBrithController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -240,6 +242,9 @@
 		AEFCAD6A14ECA20200D6A904 /* AddBrithAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBrithAdapter.m; sourceTree = "<group>"; };
 		AEFCAD6D14ECA40700D6A904 /* DataItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItemFactory.h; sourceTree = "<group>"; };
 		AEFCAD6E14ECA40700D6A904 /* DataItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItemFactory.m; sourceTree = "<group>"; };
+		AEFCAD7814EDF49E00D6A904 /* ImportBrithController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportBrithController.h; sourceTree = "<group>"; };
+		AEFCAD7914EDF49F00D6A904 /* ImportBrithController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportBrithController.m; sourceTree = "<group>"; };
+		AEFCAD7A14EDF49F00D6A904 /* ImportBrithController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportBrithController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,6 +542,9 @@
 				AE2C5E2414EA0F1400D09381 /* AddBrithController.h */,
 				AE2C5E2514EA0F1400D09381 /* AddBrithController.m */,
 				AE2C5E2614EA0F1400D09381 /* AddBrithController.xib */,
+				AEFCAD7814EDF49E00D6A904 /* ImportBrithController.h */,
+				AEFCAD7914EDF49F00D6A904 /* ImportBrithController.m */,
+				AEFCAD7A14EDF49F00D6A904 /* ImportBrithController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -684,6 +692,7 @@
 				AE25E4AB14EA13CB0041184C /* ImportantBrithViewController.xib in Resources */,
 				AEFCAD5D14EBB52C00D6A904 /* PersonViewCell.xib in Resources */,
 				AEFCAD6014EBB5DD00D6A904 /* head.png in Resources */,
+				AEFCAD7C14EDF4A000D6A904 /* ImportBrithController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +751,7 @@
 				AEFCAD5B14EBB46600D6A904 /* AllBrithCellView.m in Sources */,
 				AEFCAD6B14ECA20300D6A904 /* AddBrithAdapter.m in Sources */,
 				AEFCAD6F14ECA40700D6A904 /* DataItemFactory.m in Sources */,
+				AEFCAD7B14EDF4A000D6A904 /* ImportBrithController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

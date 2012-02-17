@@ -11,6 +11,26 @@
 
 @implementation DataSourceBase
 
+- (BOOL)dataCenterContain:(DataItem *)dataItem
+{
+    BOOL ret = NO;
+    NSArray *allPerson = [[DataCenter sharedInstance] dataCenterAllPerson];
+    
+    for (id person in allPerson)
+    {
+        if ([person isKindOfClass:[DataItem class]])
+        {
+            if ([(DataItem *)person addressEqual:dataItem])
+            {
+                ret = YES;
+                break;
+            }
+        }
+    }
+    
+    return ret;
+}
+
 // get data source 
 - (NSArray*)dataCenterSource
 {
@@ -21,7 +41,8 @@
 - (BOOL)dataCenterCheckin
 {
     NSArray *data = [self dataCenterStanderize];
-    [[DataCenter sharedInstance] dataCenterAddList:data];
+    NSArray *dataNoDuplicate = [self dataCenterFilter:data];
+    [[DataCenter sharedInstance] dataCenterAddList:dataNoDuplicate];
     return YES;
 }
 
@@ -29,6 +50,29 @@
 - (NSArray*)dataCenterStanderize
 {
     return nil;    
+}
+
+// remove duplicate
+- (NSArray*)dataCenterFilter:(NSArray*)rawList
+{
+    NSMutableArray *result = [NSMutableArray array];
+
+    if (rawList)
+    {
+        for (id rawData in rawList)
+        {
+            if ([rawData isKindOfClass:[DataItem class]])
+            {
+                if (![self dataCenterContain:rawData])
+                {
+                    [result addObject:rawData];
+                }
+            }
+        }
+        return result;
+    }
+    
+    return nil;
 }
 
 @end

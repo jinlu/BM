@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataItem.h"
 
 @protocol DataProvider <NSObject>
 
@@ -18,5 +19,8 @@
 
 // data source into data center
 - (BOOL)dataCenterCheckin;
+
+// data source remove duplicate
+- (NSArray*)dataCenterFilter:(NSArray*)data;
 
 @end

@@ -27,5 +27,7 @@
 - (id)init:(long long)itemID;
 - (NSString*)addressLogoURL;
 - (BOOL)addressSetLogoURL:(NSString *)logoURL;
+- (BOOL)addressEqual:(DataItem *)other;
 - (void)debugOutput;
+
 @end

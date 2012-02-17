@@ -7,9 +7,9 @@
 //
 
 #import "AddBrithController.h"
-#import "KaixinLoginController.h"
 #import "AddBrithAdapter.h"
 #import "DataItemFactory.h"
+#import "KaixinLoginController.h"
 
 @implementation AddBrithController
 @synthesize nameInputTextField;
@@ -61,12 +61,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AddBrithController)
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)kaixinImport:(id)sender 
-{
-    KaixinLoginController *loginController = [KaixinLoginController sharedInstance];
-    [self.navigationController pushViewController:loginController animated:YES];
-}
-
 - (void)dealloc 
 {
     [nameInputTextField release];
@@ -93,4 +87,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AddBrithController)
     return YES;
 }
 
+- (IBAction)kaixinImport:(id)sender 
+{
+    KaixinLoginController *loginController = [KaixinLoginController sharedInstance];
+    [self.navigationController pushViewController:loginController animated:YES];
+
+}
 @end

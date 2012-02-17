@@ -11,9 +11,10 @@
 
 @interface AddBrithController : UIViewController <UITextFieldDelegate>
 
+SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(AddBrithController)
+
 - (IBAction)kaixinImport:(id)sender;
 
-SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(AddBrithController)
 @property (retain, nonatomic) IBOutlet UITextField *nameInputTextField;
 @property (retain, nonatomic) IBOutlet UISwitch *genderSwith;
 
