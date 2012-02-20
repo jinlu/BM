@@ -135,7 +135,7 @@
 
 -(void)back:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)addAll:(id)sender

@@ -10,6 +10,7 @@
 #import "Kaixin.h"
 #import "FriendItemCell.h"
 #import "KaxinDataSourceModel.h"
+#import "SynthesizeSingleton.h"
 
 @interface FriendListController : UIViewController <UITableViewDelegate, UITableViewDataSource, FriendListModelDelegate> 
 {

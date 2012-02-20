@@ -81,6 +81,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KaixinLoginController)
     [userPwdLoginButton setBackgroundImage:[[UIImage imageNamed:@"loginpage_loginbtn.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:0] forState:UIControlStateNormal];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (KaixinButton.isLoggedIn)
+    {
+        FriendListController *appListViewController = [[FriendListController alloc] initWithNibName:@"FriendListController" bundle:nil];
+        [[self navigationController] pushViewController:appListViewController animated:YES];
+        [appListViewController release];
+    }
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // NSObject
 
@@ -126,7 +138,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KaixinLoginController)
     return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
-
 /**
  * Called when the user has logged in successfully.
  */
@@ -158,7 +169,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KaixinLoginController)
     [userPwdLoginButton setTitle:@"用户名密码登录" forState:UIControlStateNormal];
 }
 
-
 - (void)request:(KaixinRequest *)request didReceiveResponse:(NSURLResponse *)response 
 {
     NSLog(@"received response");
@@ -167,10 +177,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KaixinLoginController)
 - (void)request:(KaixinRequest *)request didLoad:(id)result
 {
     [CommonData sharedData].uid = [[result objectForKey:@"result"] intValue];
-    
     KaixinButton.isLoggedIn = YES;
     [KaixinButton updateTitle];
-    
 };
 
 - (void)request:(KaixinRequest *)request didFailWithError:(NSError *)error 
@@ -181,7 +189,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KaixinLoginController)
 
 ////////////////////////////////////////////////////////////////////////////////
 // KaixinDialogDelegate
-
 /**
  * Called when a UIServer Dialog successfully return.
  */

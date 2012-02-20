@@ -10,12 +10,13 @@
 #import "KaixinConnect.h"
 #import "KaixinLoginButton.h"
 #import "SynthesizeSingleton.h"
+#import "KaixinLoginController.h"
 
 @interface KaixinLoginController : UIViewController<KaixinRequestDelegate,KaixinDialogDelegate,KaixinSessionDelegate>
 {
-    KaixinLoginButton*  KaixinButton;
-    UIButton*           userPwdLoginButton;
-    Kaixin*             kaixin;
+    KaixinLoginButton       *KaixinButton;
+    UIButton                *userPwdLoginButton;
+    Kaixin                  *kaixin;
 }
 
 @property(nonatomic, retain) IBOutlet KaixinLoginButton*  KaixinButton;
